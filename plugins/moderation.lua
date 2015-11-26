@@ -39,7 +39,6 @@ local function automodadd(msg)
       end
         -- create data array in moderation.json
       
-          moderators ={[tostring(msg.from.id)] = username},
           settings = {
               set_name = string.gsub(msg.to.print_name, '_', ' '),
               lock_name = 'no',
