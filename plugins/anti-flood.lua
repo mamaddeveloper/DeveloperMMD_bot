@@ -49,7 +49,7 @@ local function pre_process (msg)
       if msgs > NUM_MSG_MAX then
         local receiver = get_receiver(msg)
         local user = msg.from.id
-        local text = 'User '..user..' is flooding'
+        local text = 'User '..user..' is flooding Will Be Kick By ME Mr.MamaD :D'
         local chat = msg.to.id
 
         send_msg(receiver, text, ok_cb, nil)
@@ -60,9 +60,9 @@ local function pre_process (msg)
         elseif is_sudo(msg) then
           print('I won\'t kick an admin!')
         else
-          -- Ban user
-          -- TODO: Check on this plugin bans
-          local bhash = 'banned:'..msg.to.id..':'..msg.from.id
+          -- kick user
+          -- TODO: Check on this plugin kicks
+          local bhash = 'kicked:'..msg.to.id..':'..msg.from.id
           redis:set(bhash, true)
           kick_user(user, chat)
         end
