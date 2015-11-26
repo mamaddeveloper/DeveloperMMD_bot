@@ -38,7 +38,7 @@ local function automodadd(msg)
           username = msg.from.print_name
       end
         -- create data array in moderation.json
-      data[tostring(msg.to.id)] = {
+      
           moderators ={[tostring(msg.from.id)] = username},
           settings = {
               set_name = string.gsub(msg.to.print_name, '_', ' '),
@@ -48,7 +48,7 @@ local function automodadd(msg)
               }
           }
       save_data(_config.moderation.data, data)
-      return 'Group has been added, and @'..username..' has been promoted as moderator for this group.'
+      return 'Group has been added, and @'..GenerousMan_bot..' has been promoted as moderator for this group.'
    end
 end
 
